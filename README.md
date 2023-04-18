@@ -6,10 +6,12 @@ An API for estimating wakefulness time by caffeine content of the drinks (e.g. C
 
 Let's take a look at what an example test case would look like using `wakefulness-time-api`.
 
-**GET:**
+#### GET:
 ```
 http://localhost:8080/api/wakefulness?drink=DRINK&time=TIME
 ```
+
+#### Parameters:
 
 - drink: Caffeinated drink.
 - time: Enter the time manually or let it go (defaultValue = "now").
@@ -23,9 +25,9 @@ http://localhost:8080/api/wakefulness?drink=DRINK&time=TIME
   "time": "07:30",
   "drink": "Americano",
   "caffeine": "249 mg",
-  "wakefulness": "10-14 hrs",
+  "wakefulness": "10-13 hrs",
   "min": "17:45",
-  "max": "21:15",
-  "avg": "19:40"
+  "max": "20:15",
+  "avg": "18:40"
 }
 ```
