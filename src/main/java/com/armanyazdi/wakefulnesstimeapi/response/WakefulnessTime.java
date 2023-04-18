@@ -16,7 +16,7 @@ public class WakefulnessTime {
     private final String avg;
 
     public WakefulnessTime(long id, String drink, String time) {
-        Drink.addData(drink);
+        Drink.addData(drink, time);
 
         this.id = id;
         this.status = HttpStatus.OK;
