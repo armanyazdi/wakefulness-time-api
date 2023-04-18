@@ -1,4 +1,4 @@
-package com.armanyazdi.wakefulnesstimeapi.response;
+package com.armanyazdi.wakefulnesstimeapi;
 
 import org.joda.time.DateTime;
 
