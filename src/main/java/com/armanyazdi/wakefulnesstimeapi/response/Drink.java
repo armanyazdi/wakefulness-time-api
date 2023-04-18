@@ -4,7 +4,7 @@ public class Drink {
     public static short caffeine;
     public static int min, max;
 
-    public static void addData(String drink) {
+    public static void addData(String drink, String time) {
         switch (drink.toLowerCase()) {
             case "americano" -> caffeine = 249;
             case "cappuccino" -> caffeine = 80;
@@ -14,6 +14,7 @@ public class Drink {
             case "frappuccino" -> caffeine = 79;
             case "macchiato" -> caffeine = 85;
             case "affogato" -> caffeine = 85;
+            case "chemex" -> caffeine = 172;
             case "brewed" -> caffeine = 96;
             case "nescafe" -> caffeine = 50;
             case "redbull" -> caffeine = 80;
@@ -24,6 +25,11 @@ public class Drink {
         }
 
         min = Math.round((float) caffeine / 24);
-        max = min + 4;
+        max = min + 3;
+
+        if (Time.fix(time).getHourOfDay() >= 13 && Time.fix(time).getHourOfDay() < 17) {
+            min += 1;
+            max += 1;
+        }
     }
 }
