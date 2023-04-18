@@ -1,4 +1,4 @@
-package com.armanyazdi.wakefulnesstimeapi.response;
+package com.armanyazdi.wakefulnesstimeapi;
 
 import lombok.Getter;
 import org.springframework.http.HttpStatus;
@@ -15,11 +15,11 @@ public class WakefulnessTime {
     private final String max;
     private final String avg;
 
-    public WakefulnessTime(long id, String drink, String time) {
+    public WakefulnessTime(Long id, HttpStatus status, String drink, String time) {
         Drink.addData(drink, time);
 
         this.id = id;
-        this.status = HttpStatus.OK;
+        this.status = status;
         this.time = "%s:%s".formatted(String.format("%02d", Time.fix(time).getHourOfDay()), String.format("%02d", Time.fix(time).getMinuteOfHour()));
         this.drink = drink.substring(0, 1).toUpperCase() + drink.substring(1);
         this.caffeine = "%s mg".formatted(Drink.caffeine);
