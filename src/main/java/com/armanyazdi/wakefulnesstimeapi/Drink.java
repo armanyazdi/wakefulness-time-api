@@ -1,4 +1,4 @@
-package com.armanyazdi.wakefulnesstimeapi.response;
+package com.armanyazdi.wakefulnesstimeapi;
 
 public class Drink {
     public static short caffeine;
@@ -7,10 +7,10 @@ public class Drink {
     public static void addData(String drink, String time) {
         switch (drink.toLowerCase()) {
             case "americano" -> caffeine = 249;
-            case "cappuccino" -> caffeine = 80;
+            case "espresso" -> caffeine = 126;
             case "latte" -> caffeine = 154;
             case "mocha" -> caffeine = 152;
-            case "espresso" -> caffeine = 63;
+            case "cappuccino" -> caffeine = 80;
             case "frappuccino" -> caffeine = 79;
             case "macchiato" -> caffeine = 85;
             case "affogato" -> caffeine = 85;
@@ -21,10 +21,10 @@ public class Drink {
             case "hype" -> caffeine = 80;
             case "cocacola" -> caffeine = 34;
             case "tea" -> caffeine = 47;
-            case "greentea" -> caffeine = 20;
+            case "greentea" -> caffeine = 30;
         }
 
-        min = Math.round((float) caffeine / 24);
+        min = Math.round((float) caffeine / 25);
         max = min + 3;
 
         if (Time.fix(time).getHourOfDay() >= 13 && Time.fix(time).getHourOfDay() < 17) {
