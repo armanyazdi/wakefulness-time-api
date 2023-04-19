@@ -12,8 +12,8 @@ import java.util.concurrent.atomic.AtomicLong;
 @RestController
 @RequestMapping("/api")
 public class WakefulnessTimeController {
-    private static final AtomicLong counter = new AtomicLong();
-    private static final HttpStatus status = HttpStatus.OK;
+    private final AtomicLong counter = new AtomicLong();
+    private final HttpStatus status = HttpStatus.OK;
 
     @GetMapping("/wakefulness")
     public WakefulnessTime wakefulness(@RequestParam String drink,
