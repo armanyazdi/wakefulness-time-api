@@ -16,9 +16,10 @@ public class WakefulnessTimeController {
     private final HttpStatus status = HttpStatus.OK;
 
     @GetMapping("/wakefulness")
-    public WakefulnessTime wakefulness(@RequestParam String drink,
-                                        @RequestParam(defaultValue = "now") String time)
+    public WakefulnessTime wakefulness(@RequestParam String coffee,
+                                       @RequestParam(defaultValue = "0") String robusta,
+                                       @RequestParam(defaultValue = "now") String time)
     {
-        return new WakefulnessTime(counter.incrementAndGet(), status, drink, time);
+        return new WakefulnessTime(counter.incrementAndGet(), status, coffee, robusta, time);
     }
 }
