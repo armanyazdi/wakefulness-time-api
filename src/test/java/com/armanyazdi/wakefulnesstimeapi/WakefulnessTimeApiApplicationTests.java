@@ -9,22 +9,36 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class WakefulnessTimeApiApplicationTests {
 
     @Test
-    public void testCaffeineContentOfDrinks() {
-        Drink.addData("americano", "now");
-        assertEquals(249, Drink.caffeine);
+    public void testCaffeineContentOfCoffee() {
+        Coffee.calculate("americano", "0", "now");
+        assertEquals(249, Coffee.caffeine);
+
+        Coffee.calculate("americano", "20", "now");
+        assertEquals(289, Coffee.caffeine);
+
+        Coffee.calculate("americano", "30", "now");
+        assertEquals(309, Coffee.caffeine);
     }
 
     @Test
-    public void testMinAndMaxWakefulnessTimeOfDrinks13To17() {
-        Drink.addData("americano", "13:00");
-        assertEquals(11, Drink.min);
-        assertEquals(14, Drink.max);
+    public void testMinAndMaxWakefulnessTimeOfCoffee13To17() {
+        Coffee.calculate("americano", "0", "13:00");
+        assertEquals(11, Coffee.min);
+        assertEquals(14, Coffee.max);
+
+        Coffee.calculate("americano", "20", "14:30");
+        assertEquals(13, Coffee.min);
+        assertEquals(16, Coffee.max);
     }
 
     @Test
-    public void testMinAndMaxWakefulnessTimeOfDrinksAtOtherTimes() {
-        Drink.addData("americano", "12:59");
-        assertEquals(10, Drink.min);
-        assertEquals(13, Drink.max);
+    public void testMinAndMaxWakefulnessTimeOfCoffeeAtOtherTimes() {
+        Coffee.calculate("americano", "0", "12:59");
+        assertEquals(10, Coffee.min);
+        assertEquals(13, Coffee.max);
+
+        Coffee.calculate("americano", "20", "7:30");
+        assertEquals(12, Coffee.min);
+        assertEquals(15, Coffee.max);
     }
 }
