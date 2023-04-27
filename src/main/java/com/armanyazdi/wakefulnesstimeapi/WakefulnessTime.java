@@ -7,18 +7,10 @@ import org.springframework.http.HttpStatus;
 public class WakefulnessTime {
     private final Long id;
     private final HttpStatus status;
-    private final String time;
-    private final String coffee;
-    private final String arabica;
-    private final String robusta;
-    private final String caffeine;
-    private final String wakefulness;
-    private final String min;
-    private final String max;
-    private final String avg;
+    private final String time, coffee, arabica, robusta, caffeine, wakefulness, min, max, avg;
 
     public WakefulnessTime(Long id, HttpStatus status, String coffee, String robusta, String time) {
-        Coffee.calculate(coffee, robusta, time);
+        Coffee.calculateCaffeine(coffee, robusta, time);
 
         this.id = id;
         this.status = status;
