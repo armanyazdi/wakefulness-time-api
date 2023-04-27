@@ -4,7 +4,7 @@ public class Coffee {
     public static short content;
     public static int arabica, robusta, caffeine, min, max;
 
-    public static void calculate(String coffee, String robusta, String time) {
+    public static void calculateCaffeine(String coffee, String robusta, String time) {
         switch (coffee.toLowerCase()) {
             case "americano" -> content = 249;
             case "espresso" -> content = 126;
