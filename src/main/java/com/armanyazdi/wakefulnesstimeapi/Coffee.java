@@ -4,7 +4,7 @@ public class Coffee {
     public static short content;
     public static int arabica, robusta, caffeine, min, max;
 
-    public static void calculateCaffeine(String coffee, String robusta, String time) {
+    public static void calculateCaffeineContent(String coffee, String robusta, String time) {
         switch (coffee.toLowerCase()) {
             case "americano" -> content = 249;
             case "espresso" -> content = 126;
@@ -16,7 +16,10 @@ public class Coffee {
             case "affogato" -> content = 85;
             case "chemex" -> content = 172;
             case "brewed" -> content = 96;
-            case "nescafe" -> content = 50;
+            case "ristretto" -> content = 66;
+            case "turkish" -> content = 50;
+            case "lungo" -> content = 80;
+            case "yazdi" -> content = 50;
         }
 
         Coffee.robusta = Integer.parseInt(robusta.replaceAll("[^0-9]",""));
