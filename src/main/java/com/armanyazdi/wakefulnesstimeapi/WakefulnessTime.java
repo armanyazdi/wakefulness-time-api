@@ -10,7 +10,7 @@ public class WakefulnessTime {
     private final String time, coffee, arabica, robusta, caffeine, wakefulness, min, max, avg;
 
     public WakefulnessTime(Long id, HttpStatus status, String coffee, String robusta, String time) {
-        Coffee.calculateCaffeine(coffee, robusta, time);
+        Coffee.calculateCaffeineContent(coffee, robusta, time);
 
         this.id = id;
         this.status = status;
