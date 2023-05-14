@@ -7,7 +7,8 @@ public class Coffee {
     public static void calculateCaffeineContent(String coffee, String robusta, String time) {
         switch (coffee.toLowerCase()) {
             case "americano" -> content = 249;
-            case "espresso" -> content = 126;
+            case "espresso" -> content = 63;
+            case "doppio" -> content = 126;
             case "latte" -> content = 154;
             case "mocha" -> content = 152;
             case "cappuccino" -> content = 173;
