@@ -29,8 +29,8 @@ http://localhost:8080/api/wakefulness?coffee=COFFEE&robusta=ROBUSTA&time=TIME
   "robusta": "0%",
   "caffeine": "249 mg",
   "wakefulness": "10-13 hours",
-  "min": "17:45",
-  "max": "20:15",
-  "avg": "18:40"
+  "minimum": "17:45",
+  "maximum": "20:15",
+  "average": "18:40"
 }
 ```
